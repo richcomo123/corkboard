@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Contact Us</legend>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lasttName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-info">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock content %}

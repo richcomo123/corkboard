@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div style="margin-left: 94%;">
+    <div class="mb-3">
+      <a class="btn btn-outline-info mb-4" href="{{ url_for('main.new_post') }}" role="button">
+        <div style="size: 50px;">  
+        +
+        </div>
+      </a>
+    </div>
+  </div>
+    {% for post in posts.items %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+          <div class="media-body" >
+            <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('main.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+              <div class="d-flex justify-content-end align-items-center">
+                <div class="mr-2">{{ post.likes|length }}</div>
+                
+                <div>
+                    {% if current_user.id in post.likes|map(attribute="author")|list %}
+                        <a href="{{ url_for('main.like_post', post_id=post.id) }}"><i class="fas fa-star"></i></a>
+                    {% else %}
+                        <a href="{{ url_for('main.like_post', post_id=post.id) }}"><i class="far fa-star"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            {% if post.file_path %}
+              {% if post.file_path|file_type == 'image' %}
+                <img src="{{ url_for('static', filename='uploads/' + post.file_path) }}" class="card-img-top" alt="File Preview">
+              {% elif post.file_path|file_type == 'video' %}
+                <video width="320" height="240" controls>
+                  <source src="{{ url_for('static', filename='uploads/' + post.file_path) }}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              {% else %}
+              <p>File: <a href="{{ url_for('static', filename='uploads/' + post.file_path) }}" target="_blank" download>Download File</a> </p>
+              {% endif %}
+            {% endif %}
+          </div>
+        </article>
+        
+
+
+    {% endfor %}
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if posts.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}
+{% endblock content %}

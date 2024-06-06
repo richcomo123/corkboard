@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Starred Boards{% endblock %}
+
+{% block content %}
+  <h1 class="mb-5">Your Starred Boards</h1>
+
+  {% if liked_posts %}
+    <ul>
+      {% for post in liked_posts %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{{ url_for('main.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                <div class="d-flex justify-content-end align-items-center">
+                <div class="mr-2">{{ post.likes|length }}</div>
+                
+                <div>
+                    {% if current_user.id in post.likes|map(attribute="author")|list %}
+                        <a href="{{ url_for('main.like_post', post_id=post.id) }}"><i class="fas fa-star"></i></a>
+                    {% else %}
+                        <a href="{{ url_for('main.like_post', post_id=post.id) }}"><i class="far fa-star"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+
+            {% if post.file_path %}
+                <p>File: <a href="{{ url_for('static',  filename='uploads/' + post.file_path) }}" target="_blank">Download File</a></p>
+            {% endif %}
+            </div>
+      </article>
+      
+        
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No starred boards found.</p>
+  {% endif %}
+{% endblock content %}
+

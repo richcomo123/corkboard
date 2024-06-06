@@ -1,0 +1,15 @@
+.venv
+.env
+__pycache__
+.__pycache__
+.DS_Store
+venv
+env
+migrations/
+<<<<<<< HEAD
+pyc
+.pyc
+=======
+__pycache__
+.DS_Store
+>>>>>>> 15449a5dffd8c5a12c5ed23e52c928c628caebe8

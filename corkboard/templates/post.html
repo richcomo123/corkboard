@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{{ url_for('main.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+        <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+        <div class="d-flex justify-content-end align-items-center">
+          <div class="mr-2">{{ post.likes|length }}</div>
+          
+          <div>
+              {% if current_user.id in post.likes|map(attribute="author")|list %}
+                  <a href="{{ url_for('main.like_post', post_id=post.id) }}"><i class="fas fa-star"></i></a>
+              {% else %}
+                  <a href="{{ url_for('main.like_post', post_id=post.id) }}"><i class="far fa-star"></i></a>
+              {% endif %}
+          </div>
+      </div>
+      
+       
+
+       
+        {% if post.author == current_user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('main.update_post', post_id=post.id) }}">Update</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+          </div>
+        {% endif %}
+      </div>
+      <h2 class="article-title">{{ post.title }}</h2>
+      <p class="article-content">{{ post.content }}</p>
+
+      {% if post.file_path %}
+        <p>File: <a href="{{ url_for('static', filename='uploads/' + post.file_path) }}" target="_blank">{{ post.file_path }}</a></p>
+      {% endif %}
+
+    
+    
+      <div class="collapse" id="comments-{{post.id}}">
+        <div class="card">
+          <div class="card-body" id="comments-expanded-{{post.id}}">
+            {% for comment in post.comments %}
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <a href="{{ url_for('main.user_posts', username=comment.author.username) }}">
+                  {{comment.author.username}}</a
+                >: {{comment.text}}
+              </div>
+              <div>
+                <small class="text-muted"> {{comment.date_created}}</small>
+                {% if current_user.id == comment.author_id or current_user== post.author %}
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-primary dropdown-toggle"
+                    data-toggle="dropdown"
+                  ></button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        href="/delete_comment/{{comment.id}}"
+                        class="dropdown-item"
+                        >Delete</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+          <p class="card-text">
+            {% if post.comments|length > 0 %}
+                <a data-toggle="collapse" href="#comments-{{post.id}}" role="button">
+                    <small>View {{post.comments|length}} Comments</small>
+                </a>
+            {% else %}
+                <small class="text-muted">No Comments</small>
+            {% endif %}
+        </p>
+          <form class="input-group mb-3" method="POST" action="/create_comment/{{post.id}}" style="align-items: baseline;">
+            <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-info mb-4" style="margin-top: 0;">Comment</button>
+            </div>
+        </form>  
+  
+    </div>
+
+    
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('main.delete_post', post_id=post.id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+

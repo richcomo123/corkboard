@@ -1,0 +1,195 @@
+[33mcommit 55e9ce916356a5daba58f7e6e3ebfbd65a89ea0a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 7eddbc7 422f3f6
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 29 17:00:58 2023 -0500
+
+    git ignore pyc update
+
+[33mcommit 7eddbc79a776e75d4226b4f11b2484712bfb1219[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 29 17:00:10 2023 -0500
+
+    git ignore pyc update
+
+[33mcommit 0f1ab5eaaa758df47bcf3f10a8739521dec10efa[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 29 16:57:44 2023 -0500
+
+    git ignore pyc update
+
+[33mcommit a2b86dd228829e2e0b7a31076195b394721252b9[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 29 16:55:13 2023 -0500
+
+    git ignore pyc update
+
+[33mcommit 422f3f6831d87ce2851d54370850e9ea3f9af2ca[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: richcomo123 <richcomo123@gmail.com>
+Date:   Wed Nov 29 14:15:51 2023 -0500
+
+    fixed package complicatons
+
+[33mcommit 4b87aceb1b120e33a146a1428c84105e12059a9c[m
+Author: richcomo123 <richcomo123@gmail.com>
+Date:   Tue Nov 28 02:03:35 2023 -0500
+
+    added email and reset password and fixed the landing page
+
+[33mcommit 84b6329b671c474c52e7ddb46429d5d40e8a4be7[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Mon Nov 27 23:29:10 2023 -0500
+
+    Fixed the edit boards function
+
+[33mcommit 991503ecb9610ffab1bbf3a2740a11c9456a82d0[m
+Merge: a0cdfce 272330d
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Mon Nov 27 15:59:48 2023 -0500
+
+    merge commit
+
+[33mcommit a0cdfcebee08744fa62efd853de1f45983335694[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Mon Nov 27 15:57:54 2023 -0500
+
+    pre-boards merge commit
+
+[33mcommit 272330d01d266dc2267caa1b8f7413907a0b23b6[m[33m ([m[1;31morigin/boards[m[33m)[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Mon Nov 27 00:07:38 2023 -0500
+
+    Board views added | Added creating, updating, and deleting boards functions
+
+[33mcommit 2bbb2017143de070a90c378602f1590af9c7494f[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Sun Nov 26 17:25:38 2023 -0500
+
+    Added a page to create boards
+
+[33mcommit fdbebe755e8091b91aaaf55cad3e6ac355466470[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Sun Nov 26 17:24:36 2023 -0500
+
+    Updated the database and added a create link in the nav
+
+[33mcommit ee5ef47bef791129ba1f71d62f3bae9e2343e18d[m[33m ([m[1;31morigin/landingPage[m[33m, [m[1;32mlandingPage[m[33m)[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 22 18:44:28 2023 -0500
+
+    Landing Page aspects added | Login and authentication routing in lannding page on home
+
+[33mcommit 3fb004193bc1453fc5177bb273bcdeb707629dab[m
+Merge: 343720d 5c63461
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 22 17:24:09 2023 -0500
+
+    Merge branch 'main' of https://github.com/OliverWard4/ITSC_3155_Final_Project into landingPage
+
+[33mcommit 343720dd335c5bd24b5c39ad16d694f4c762cbda[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Wed Nov 22 17:24:01 2023 -0500
+
+    added landing page | changed when the menu will show up | added landingPage routing
+
+[33mcommit 5c63461f45713b604f3428712f2272863ff13c14[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Mon Nov 20 16:28:05 2023 -0500
+
+    Added Recently Viewed table
+
+[33mcommit e44f2889eea25be190788fe207623984a31bed31[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Mon Nov 20 16:15:59 2023 -0500
+
+    Added html page contents and made minor edits to app.py
+
+[33mcommit b5843e6f444cebe070f93dfc8a705977bf8c1887[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Sun Nov 19 14:26:41 2023 -0500
+
+    added menu html pages and routes | started search page build
+
+[33mcommit 18be788476116ddf530022af6b3880b5ed46db8a[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Sun Nov 19 12:59:18 2023 -0500
+
+    links added to menu | search page created and linked
+
+[33mcommit cb98f5e39503f0e7c3edaa7c2537cb0008245527[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Sun Nov 19 11:56:52 2023 -0500
+
+    removed pychache| added to git ignore
+
+[33mcommit 9f161758401d92cd81c1a06d2f4093489bc6fc45[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Sun Nov 19 11:53:11 2023 -0500
+
+    fixed flask routing | renamed and moved routes new name is app.py | re added a git ignore file
+
+[33mcommit 14c6abe3d73f9bda809c612a2f4f563415e6dc7d[m
+Author: richcomo123 <richcomo123@gmail.com>
+Date:   Fri Nov 17 22:51:36 2023 -0500
+
+    Post will go here
+
+[33mcommit 0c4e2d4b3e55440c03e7d4514bd3826cee82a58a[m
+Author: richcomo123 <richcomo123@gmail.com>
+Date:   Fri Nov 17 22:37:22 2023 -0500
+
+    Changed project Structure  and made sure user acco
+    unt creation work
+
+[33mcommit be68d7bbfe2fcd0994d58e429bee33518d0e584e[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 17 16:07:20 2023 -0500
+
+    Added content to the Recently Viewed page
+
+[33mcommit f821403c8e39f727adf05420aeaf598913ce563f[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 17 15:56:51 2023 -0500
+
+    Changed recently_viewed table schema
+
+[33mcommit b8873f5ce45bb33b1209db04da7b8cf448d44ae1[m
+Author: OliverBWard <OliverBWard4@gmail.com>
+Date:   Fri Nov 17 15:43:58 2023 -0500
+
+    changed route to get and testing git push from seperate device
+
+[33mcommit ba420ba35051d877e4c95ed9e1d90eda8f4c4482[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 17 15:19:24 2023 -0500
+
+    header and footer fixed
+
+[33mcommit 9016519857a1cc003f5ce6c2d006f0cfccfdefe7[m
+Author: richcomo123 <richcomo123@gmail.com>
+Date:   Sat Nov 11 00:23:20 2023 -0500
+
+    Made sure links are working and adjusted a few things
+
+[33mcommit 0577d635392cafc8b1a66f3a4b10c77abf997ea6[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 10 16:38:48 2023 -0500
+
+    Create templates folder
+
+[33mcommit bc4f754a2a939e29d8747ef582d0b4beca072b62[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 10 16:37:52 2023 -0500
+
+    Created app.py file
+
+[33mcommit 498250d0e387f65ef11b41dcac7af279ce2fb46b[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 10 16:37:27 2023 -0500
+
+    Added requirements.txt file
+
+[33mcommit 414ad3eba5cd02b8bc6ec66568ea249a97297b3c[m
+Author: ssomo <sofia.mohamed.733@gmail.com>
+Date:   Fri Nov 10 16:36:47 2023 -0500
+
+    Added .gitignore file
